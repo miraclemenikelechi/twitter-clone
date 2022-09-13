@@ -32,13 +32,10 @@ body {
 
 .loader {
     position: fixed;
-    /* top: 0; */
-    /* left: 0; */
     width: 100vw;
     height: 100vh;
     z-index: 2;
     background: var(--white-1);
-    /* flex-direction: column; */
     transition: all ease .5s;
 }
 
@@ -251,6 +248,12 @@ body {
     color: white;
     font-size: 20rem;
     pointer-events: none;
+}
+
+@media (min-width: 420px) and (max-width: 1000px) and (orientation : landscape) {
+    .bottom>ion-icon {
+        font-size: 10rem;
+    }
 }
 
 @media (min-width: 1000px) {
