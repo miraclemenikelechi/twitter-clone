@@ -238,7 +238,7 @@ body {
 .bottom {
     position: relative;
     height: 50vh;
-    width: 100vw;
+    width: 100%;
     background-image: url("../images/index/login.png");
     background-size: cover;
     background-position: center;
@@ -246,7 +246,7 @@ body {
 
 .bottom>ion-icon {
     color: white;
-    font-size: 20rem;
+    font-size: 15rem;
     pointer-events: none;
 }
 
@@ -279,7 +279,7 @@ footer>div {
 }
 
 footer>div>* {
-    flex: 0 1 5rem;
+    flex: 0 1 2rem;
 }
 
 @media (min-width: 470px) {
@@ -291,11 +291,9 @@ footer>div>* {
 footer>div>span {
     font-size: .75rem;
     color: var(--grey-1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     white-space: nowrap;
-    margin: 0 4px;
+    padding-right: 6px;
     font-weight: 600;
 }
 
