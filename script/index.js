@@ -1,5 +1,5 @@
 const
-    loader = setTimeout(removeLoader, 1500),
+    loader = setTimeout(removeLoader, 3000),
     { origin } = location,
     signInButton = document.querySelector("#sign-in");
 

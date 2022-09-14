@@ -1,0 +1,411 @@
+:root {
+    /* !fonts */
+    --font: 'Libre Franklin',
+        sans-serif;
+
+    /* !colors */
+    --black-1: rgba(0, 0, 0, 0.1);
+    --black-2: rgba(0, 0, 0, 0.035);
+    --white-1: rgb(255, 255, 255);
+    --white-2: rgba(255, 255, 255, .85);
+    --blue-1: rgb(29, 161, 242);
+    --blue-2: rgba(29, 155, 240, 0.102);
+    --grey: rgb(83, 100, 113);
+    --green-1: rgb(0, 186, 124);
+    --pink-1: rgb(249, 24, 128);
+    --green-2: rgb(0, 186, 124, .1);
+    --pink-2: rgb(249, 24, 128, .1);
+
+    --transition: all ease .2s;
+    --border: .1px solid var(--black-1);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 14px;
+}
+
+body {
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    flex-direction: column;
+}
+
+.top-nav {
+    width: 100%;
+    justify-content: space-between;
+    height: 50px;
+    padding: 20px 10px;
+    position: fixed;
+    top: 0;
+    background-color: var(--white-2);
+    backdrop-filter: blur(5px);
+}
+
+.profile-picture {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding-left: 5px;
+}
+
+.profile-picture>img {
+    border-radius: inherit;
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+}
+
+.page>span {
+    padding: 0 25px;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-right: auto;
+}
+
+.feed-options {
+    width: 35px;
+    height: 35px;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+.feed-options>div {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.feed-options>div:hover {
+    background-color: var(--black-1);
+}
+
+.feed-options>div>img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.more-tweets {
+    padding-top: 50px;
+    width: 100%;
+    animation: showTweet .2s;
+}
+
+.more-tweets>span {
+    height: 45px;
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: var(--blue-1);
+    width: 100%;
+    transition: var(--transition);
+}
+
+.more-tweets>span:hover {
+    background-color: var(--black-2);
+    cursor: pointer;
+}
+
+.bottom-nav {
+    background-color: var(--white-1);
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-evenly;
+    border-top: var(--border);
+}
+
+.bottom-nav>* {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.bottom-nav>div>span {
+    position: absolute;
+    background-color: var(--blue-1);
+    border-radius: 50%;
+    border: 1.5px solid var(--white-1);
+    color: var(--white-1);
+    font-size: .5rem;
+}
+
+.bottom-nav>div>span.small-dot {
+    height: .8rem;
+    width: .8rem;
+    top: 10%;
+    right: 7%;
+}
+
+.bottom-nav>div>span.big-dot {
+    right: 12%;
+    top: 15%;
+    width: 1rem;
+    height: 1rem;
+}
+
+.bottom-nav>div>img {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.text-only-tweet {
+    min-height: 20vh;
+    align-items: flex-start;
+    padding: 10px;
+    justify-content: space-between;
+    border-top: var(--border);
+}
+
+.text-only-tweet:last-of-type {
+    border-bottom: var(--border);
+}
+
+.text-only-tweet:hover {
+    background-color: var(--black-2);
+    cursor: pointer;
+}
+
+.tweep-image {
+    height: 40px;
+    min-width: 40px;
+    margin-right: 10px;
+}
+
+.tweep-image>img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.tweet-top {
+    justify-content: space-between;
+    height: 25px;
+}
+
+.tweep-usernames {
+    font-size: 1rem;
+}
+
+.tweep-usernames>span:nth-of-type(1) {
+    font-weight: 600;
+    font-size: inherit;
+}
+
+.tweep-usernames>span:nth-of-type(2) {
+    padding: 0 4px;
+    font-weight: 400;
+    font-size: inherit;
+    color: var(--grey);
+}
+
+.tweep-usernames>span:nth-of-type(3) {
+    font-size: .7rem;
+    color: var(--grey);
+    padding-right: 2px;
+}
+
+.tweep-usernames>span:nth-of-type(4) {
+    font-size: inherit;
+    font-weight: 400;
+    color: var(--grey);
+}
+
+.tweep-usernames>span:nth-of-type(1):hover,
+.tweep-usernames>span:nth-of-type(4):hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tweet-options {
+    width: 15px;
+    height: 15px;
+    background-image: url("../images/home/option-default.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tweet-options:hover {
+    background-image: url("../images/home/option-hover.png");
+    background-color: var(--blue-2);
+    border-radius: 50%;
+}
+
+.tweet-text {
+    font-size: 1rem;
+    font-weight: 300;
+    white-space: normal;
+}
+
+.tweet-actions {
+    margin-top: 5px;
+    justify-content: space-between;
+}
+
+.tweet-actions>* {
+    transition: var(--transition);
+}
+
+.tweet-actions>div {
+    width: 55px;
+    height: 15px;
+    cursor: pointer;
+    justify-content: flex-start;
+    transition: var(--transition);
+}
+
+.tweet-actions>div:nth-of-type(1):hover * {
+    color: var(--blue-1);
+    background-color: var(--blue-2);
+}
+
+.tweet-actions>div:nth-of-type(2):hover * {
+    background-color: var(--green-2);
+    color: var(--green-1);
+}
+
+.tweet-actions>div:nth-of-type(3):hover * {
+    background-color: var(--pink-2);
+    color: var(--pink-1);
+}
+
+.tweet-actions>div:nth-of-type(4):hover * {
+    background-color: var(--blue-2);
+    color: var(--blue-2);
+}
+
+.tweet-actions>div>div {
+    height: 1.7rem;
+    min-width: 1.7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tweet-actions>div:nth-of-type(1)>div:hover,
+.tweet-actions>div:nth-of-type(1)>span:hover {
+    background-color: var(--blue-2);
+    color: var(--blue-1);
+}
+
+.tweet-actions>div:nth-of-type(2)>div:hover,
+.tweet-actions>div:nth-of-type(2)>span:hover {
+    background-color: var(--green-2);
+    color: var(--green-1);
+}
+
+.tweet-actions>div:nth-of-type(3)>div:hover,
+.tweet-actions>div:nth-of-type(3)>span:hover {
+    background-color: var(--pink-2);
+    color: var(--pink-1);
+}
+
+.tweet-actions>div:nth-of-type(4)>div:hover,
+.tweet-actions>div:nth-of-type(4)>span:hover {
+    background-color: var(--blue-2);
+    color: var(--blue-2);
+}
+
+.tweet-actions>div>span {
+    min-width: 28px;
+    font-size: .6rem;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: inherit;
+}
+
+.tweet-actions>div:nth-of-type(1)>div>span:nth-of-type(1) {
+    background-image: url("../images/home/replies-default.png");
+}
+
+.tweet-actions>div:nth-of-type(2)>div>span:nth-of-type(1) {
+    background-image: url("../images/home/retweet-default.png");
+}
+
+.tweet-actions>div:nth-of-type(3)>div>span:nth-of-type(1) {
+    background-image: url("../images/home/like-default.png");
+}
+
+.tweet-actions>div:nth-of-type(4)>div>span:nth-of-type(1) {
+    background-image: url("../images/home/share-default.png");
+}
+
+.tweet-actions>div:nth-of-type(1)>div>span:nth-of-type(1):hover {
+    background-image: url("../images/home/replies-hover.png");
+}
+
+.tweet-actions>div:nth-of-type(2)>div>span:nth-of-type(1):hover {
+    background-image: url("../images/home/retweet-hover.png");
+}
+
+.tweet-actions>div:nth-of-type(3)>div>span:nth-of-type(1):hover {
+    background-image: url("../images/home/like-hover.png");
+}
+
+.tweet-actions>div:nth-of-type(4)>div>span:nth-of-type(1):hover {
+    background-image: url("../images/home/share-hover.png");
+}
+
+.tweet-actions>div>div>span {
+    height: 15px;
+    width: 15px;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.load-more {
+    margin: 30px 0 70px 0;
+}
+
+.load-more>div {
+    height: 30px;
+    width: 100px;
+    background-color: var(--blue-1);
+    border-radius: 30px;
+}
+
+.load-more>div>span {
+    margin: 0 2.5px;
+    text-transform: capitalize;
+    font-size: .8rem;
+    font-weight: 500;
+    color: var(--white-1);
+}
+
+.new-tweet {
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    background-color: var(--blue-1);
+    border-radius: 50%;
+    bottom: 70px;
+    right: 15px;
+}
+
+.new-tweet {
+    background-image: url("../images/home/tweet.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
